@@ -1,6 +1,13 @@
 import Link from "next/link";
 
-const ButtonLogin = ({ isLoggedIn, name, extraStyle }) => {
+// Define the props interface
+interface ButtonLoginProps {
+  isLoggedIn: boolean;
+  name: string;
+  extraStyle?: string; // Optional prop with ?
+}
+
+const ButtonLogin = ({ isLoggedIn, name, extraStyle }: ButtonLoginProps) => {
   if (isLoggedIn) {
     return (
       <Link
